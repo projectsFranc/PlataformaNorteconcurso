@@ -16,6 +16,7 @@ import {
   Gauge,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { SourceAttributionFooter } from '@/components/dashboard/SourceAttribution';
 
 export const Route = createFileRoute('/dashboard/editais')({
   component: EditaisPage,
@@ -272,6 +273,8 @@ function EditaisPage() {
           })}
         </div>
       )}
+
+      <SourceAttributionFooter className="pt-2" />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { BookMarked, CheckCircle2, XCircle, CircleSlash, ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { SourceAttribution, SourceAttributionFooter } from '@/components/dashboard/SourceAttribution';
 
 export const Route = createFileRoute('/dashboard/question-bank')({
   component: QuestionBankPage,
@@ -164,6 +165,11 @@ function QuestionBankPage() {
                         Confiança da explicação: {q.source_confidence} — vale conferir com material complementar.
                       </p>
                     )}
+                    <SourceAttribution
+                      contestName={q.contest_name}
+                      contestYear={q.contest_year}
+                      itemNumber={q.item_number}
+                    />
                   </div>
                 )}
               </CardContent>
@@ -171,6 +177,8 @@ function QuestionBankPage() {
           );
         })}
       </div>
+
+      <SourceAttributionFooter className="pt-2" />
     </div>
   );
 }

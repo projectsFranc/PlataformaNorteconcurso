@@ -18,6 +18,7 @@ import { Route as CheckoutPlanIdRouteImport } from './routes/checkout.$planId'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as DashboardAdminRouteImport } from './routes/dashboard/admin'
 import { Route as DashboardCareersRouteImport } from './routes/dashboard/careers'
+import { Route as DashboardEditaisRouteImport } from './routes/dashboard/editais'
 import { Route as DashboardErrorsRouteImport } from './routes/dashboard/errors'
 import { Route as DashboardEssaysRouteImport } from './routes/dashboard/essays'
 import { Route as DashboardHistoryRouteImport } from './routes/dashboard/history'
@@ -77,6 +78,11 @@ const DashboardAdminRoute = DashboardAdminRouteImport.update({
 const DashboardCareersRoute = DashboardCareersRouteImport.update({
   id: '/careers',
   path: '/careers',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardEditaisRoute = DashboardEditaisRouteImport.update({
+  id: '/editais',
+  path: '/editais',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardErrorsRoute = DashboardErrorsRouteImport.update({
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/checkout/$planId': typeof CheckoutPlanIdRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/careers': typeof DashboardCareersRoute
+  '/dashboard/editais': typeof DashboardEditaisRoute
   '/dashboard/errors': typeof DashboardErrorsRoute
   '/dashboard/essays': typeof DashboardEssaysRoute
   '/dashboard/history': typeof DashboardHistoryRoute
@@ -189,6 +196,7 @@ export interface FileRoutesByTo {
   '/checkout/$planId': typeof CheckoutPlanIdRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/careers': typeof DashboardCareersRoute
+  '/dashboard/editais': typeof DashboardEditaisRoute
   '/dashboard/errors': typeof DashboardErrorsRoute
   '/dashboard/essays': typeof DashboardEssaysRoute
   '/dashboard/history': typeof DashboardHistoryRoute
@@ -216,6 +224,7 @@ export interface FileRoutesById {
   '/checkout/$planId': typeof CheckoutPlanIdRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/careers': typeof DashboardCareersRoute
+  '/dashboard/editais': typeof DashboardEditaisRoute
   '/dashboard/errors': typeof DashboardErrorsRoute
   '/dashboard/essays': typeof DashboardEssaysRoute
   '/dashboard/history': typeof DashboardHistoryRoute
@@ -244,6 +253,7 @@ export interface FileRouteTypes {
     | '/checkout/$planId'
     | '/dashboard/admin'
     | '/dashboard/careers'
+    | '/dashboard/editais'
     | '/dashboard/errors'
     | '/dashboard/essays'
     | '/dashboard/history'
@@ -269,6 +279,7 @@ export interface FileRouteTypes {
     | '/checkout/$planId'
     | '/dashboard/admin'
     | '/dashboard/careers'
+    | '/dashboard/editais'
     | '/dashboard/errors'
     | '/dashboard/essays'
     | '/dashboard/history'
@@ -295,6 +306,7 @@ export interface FileRouteTypes {
     | '/checkout/$planId'
     | '/dashboard/admin'
     | '/dashboard/careers'
+    | '/dashboard/editais'
     | '/dashboard/errors'
     | '/dashboard/essays'
     | '/dashboard/history'
@@ -386,6 +398,13 @@ declare module '@tanstack/react-router' {
       path: '/careers'
       fullPath: '/dashboard/careers'
       preLoaderRoute: typeof DashboardCareersRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/editais': {
+      id: '/dashboard/editais'
+      path: '/editais'
+      fullPath: '/dashboard/editais'
+      preLoaderRoute: typeof DashboardEditaisRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/errors': {
@@ -499,6 +518,7 @@ declare module '@tanstack/react-router' {
 interface DashboardRouteChildren {
   DashboardAdminRoute: typeof DashboardAdminRoute
   DashboardCareersRoute: typeof DashboardCareersRoute
+  DashboardEditaisRoute: typeof DashboardEditaisRoute
   DashboardErrorsRoute: typeof DashboardErrorsRoute
   DashboardEssaysRoute: typeof DashboardEssaysRoute
   DashboardHistoryRoute: typeof DashboardHistoryRoute
@@ -519,6 +539,7 @@ interface DashboardRouteChildren {
 const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardAdminRoute: DashboardAdminRoute,
   DashboardCareersRoute: DashboardCareersRoute,
+  DashboardEditaisRoute: DashboardEditaisRoute,
   DashboardErrorsRoute: DashboardErrorsRoute,
   DashboardEssaysRoute: DashboardEssaysRoute,
   DashboardHistoryRoute: DashboardHistoryRoute,

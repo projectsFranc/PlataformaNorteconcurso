@@ -24,7 +24,8 @@ import {
   FileStack,
   BookMarked,
   PenLine,
-  Timer
+  Timer,
+  ScrollText
 } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -53,6 +54,7 @@ const menuItems = [
   { label: 'Visão Geral', icon: LayoutDashboard, href: '/dashboard' },
   { label: 'Carreiras', icon: ShieldCheck, href: '/dashboard/careers' },
   { label: 'Meu Concurso', icon: Target, href: '/dashboard/my-contest' },
+  { label: 'Editais', icon: ScrollText, href: '/dashboard/editais' },
   { label: 'Minhas Provas', icon: FileStack, href: '/dashboard/student-exams' },
   { label: 'Banco de Questões', icon: BookMarked, href: '/dashboard/question-bank' },
   { label: 'Redação', icon: PenLine, href: '/dashboard/essays' },

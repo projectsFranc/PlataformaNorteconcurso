@@ -21,6 +21,11 @@ import {
   Sun,
   Flame,
   Compass,
+  ShieldCheck,
+  FileStack,
+  BookMarked,
+  PenLine,
+  Timer,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -42,9 +47,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 const menuItems = [
   { label: "Visão Geral", icon: LayoutDashboard, href: "/dashboard" },
+  { label: "Carreiras", icon: ShieldCheck, href: "/dashboard/careers" },
   { label: "Meu Concurso", icon: Target, href: "/dashboard/my-contest" },
+  { label: "Minhas Provas", icon: FileStack, href: "/dashboard/student-exams" },
+  { label: "Banco de Questões", icon: BookMarked, href: "/dashboard/question-bank" },
+  { label: "Redação", icon: PenLine, href: "/dashboard/essays" },
+  { label: "Central de Estudos", icon: Timer, href: "/dashboard/study-tools" },
   { label: "Plano de Estudos", icon: ClipboardList, href: "/dashboard/study-plan" },
-  { label: "Questões", icon: Search, href: "/dashboard/questions" },
+  { label: "Questões (simulado)", icon: Search, href: "/dashboard/questions" },
   { label: "Cadernos", icon: BookOpen, href: "/dashboard/notebooks" },
   { label: "Simulados", icon: Trophy, href: "/dashboard/mock-exams" },
   { label: "Caderno de Erros", icon: History, href: "/dashboard/errors" },
